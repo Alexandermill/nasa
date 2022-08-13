@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+
+<a href="/web/info">info</a>
+<div>
+    <p>Rover <br th:text="${manifest.getName}"></br></p>
+</div>
+
+<form method="post" action="/photos">
+    <p>
+        <label for="camera">Выберите камеру:</label>
+        <select id="camera" name="camera">
+            <option value="FHAZ">Front Hazard Avoidance Camera</option>
+            <option value="RHAZ">Rear Hazard Avoidance Camera</option>
+            <option value="MAST">Mast Camera</option>
+            <option value="CHEMCAM">Chemistry and Camera Complex</option>
+            <option value="MAHLI">Mars Hand Lens Imager</option>
+            <option value="MARDI">Mars Descent Imager</option>
+            <option value="NAVCAM">Navigation Camera</option>
+        </select>
+    </p>
+    <p><input type="text" name="sol" th:placeholder="${'max = '+ manifest.getMaxSol}" placeholder="Max sole"/></p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+</form>
+
+
+</body>
+</html>
