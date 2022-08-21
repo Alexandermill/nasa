@@ -1,0 +1,37 @@
+
+<div>
+    <p>количество фото <br th:text="${#lists.size(photos)}"></br></p>
+    <p>Rover <br th:text="${manifest.getName}"></br></p>
+    <p>Max Sol <br th:text="${manifest.getMaxSol}"></br></p>
+
+
+</div>
+<div class="galleria">
+<!--        <img th:each="photo : ${photos}" th:src="${photo.getImg_src}" />-->
+<!--&lt;!&ndash;    <img src="2.png">&ndash;&gt;-->
+</div>
+
+<script language = "JavaScript" th:inline="javascript">
+
+
+            var data = [
+            /*[# th:each="photo : ${photos}"]*/
+            {
+                image: '[(${photo.getImg_src})]'
+            },
+             /*[/]*/
+            ];
+
+
+            Galleria.loadTheme('/galleria/themes/azur/galleria.azur.min.js');
+            Galleria.configure({
+            thumbnails:'lazy',
+            dataSource:data
+            });
+
+            Galleria.ready(function(){
+            this.lazyLoadChunks(3, 1000);
+            });
+
+            Galleria.run('.galleria');
+</script>
