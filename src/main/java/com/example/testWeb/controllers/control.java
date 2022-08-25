@@ -20,14 +20,14 @@ public class control {
 
     @GetMapping
     public String getIndex(Model model){
-        return "index2";
+        return "index";
     }
 
     @GetMapping(value = "/curiosity")
     public String getInde(Model model){
         Manifest manifest = manifestClient.getManifest();
         model.addAttribute("manifest", manifest);
-        return "curiosity2";
+        return "curiosity";
     }
 
 

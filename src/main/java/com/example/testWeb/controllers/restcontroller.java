@@ -23,6 +23,7 @@ public class restcontroller {
     @Autowired
     RoverClient roverClient;
 
+    @CrossOrigin
     @GetMapping("/manifest")
     public Manifest getManifest(){
         Manifest manifest = manifestClient.getManifest();
@@ -35,6 +36,13 @@ public class restcontroller {
         Manifest manifest = manifestClient.getManifest();
         return manifest.getLostSols();
     }
+
+//    @CrossOrigin
+//    @GetMapping("/manifest/sol")
+//    public List<String>  getSols(){
+//        Manifest manifest = manifestClient.getManifest();
+//        return manifest.getSol();
+//    }
 
 
     @CrossOrigin
