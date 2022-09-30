@@ -10,10 +10,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableFeignClients
 @EnableCaching
 @EnableScheduling
-public class TestWebApplication {
+public class NasaRowerAPIViewer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestWebApplication.class, args);
+		SpringApplication.run(NasaRowerAPIViewer.class, args);
 	}
 
 }

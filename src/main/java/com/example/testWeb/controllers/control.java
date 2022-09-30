@@ -27,7 +27,7 @@ public class control {
     public String getInde(Model model){
         Manifest manifest = manifestClient.getManifest();
         model.addAttribute("manifest", manifest);
-        return "curiosity";
+        return "curiosity_test";
     }
 
 

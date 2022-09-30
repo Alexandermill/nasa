@@ -32,6 +32,15 @@ build/
 ### VS Code ###
 .vscode/
 
+### tempalate ###
+resources/galleria/
+resources/css/
+resources/js/
+resources/static/
+resources/templates/galleria
+resources/templates/css/
+resources/templates/js/
+
 
 
 /src/main/resources/static/
