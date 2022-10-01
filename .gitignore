@@ -43,5 +43,5 @@ resources/templates/js/
 
 
 
-/src/main/resources/static/
-/src/main/resources/static/galleria
+/static/
+/static/galleria
