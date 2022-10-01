@@ -24,10 +24,18 @@ public class control {
     }
 
     @GetMapping(value = "/curiosity")
-    public String getRover(Model model){
-        Manifest manifest = manifestClient.getManifest();
-        model.addAttribute("manifest", manifest);
+    public String getCuriosity(Model model){
         return "curiosity_test";
+    }
+
+    @GetMapping(value = "/spirit")
+    public String getSpirit(Model model){
+        return "spirit";
+    }
+
+    @GetMapping(value = "/opportunity")
+    public String getOpportunity(Model model){
+        return "opportunity";
     }
 
     @GetMapping(value = "/test")

@@ -1,7 +1,6 @@
 package com.example.testWeb.config;
 
 import com.example.testWeb.Entity.Manifest;
-import com.example.testWeb.Entity.Sol;
 import com.fasterxml.jackson.core.JacksonException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -26,8 +25,6 @@ public class ManifestDeserializer extends StdDeserializer<Manifest> {
     public Manifest deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JacksonException {
         JsonNode manifestNode = jp.getCodec().readTree(jp);
         Manifest manifest = new Manifest();
-        Sol sol = new Sol();
-        List<Sol> sols = new ArrayList<>();
         manifest.setName(manifestNode.get("photo_manifest").get("name").textValue());
         manifest.setMaxSol(manifestNode.get("photo_manifest").get("max_sol").intValue());
         manifest.setEarthDate(manifestNode.get("photo_manifest").get("max_date").textValue());

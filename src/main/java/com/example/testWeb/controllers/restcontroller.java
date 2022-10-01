@@ -6,6 +6,7 @@ import com.example.testWeb.Entity.Photos;
 import com.example.testWeb.clients.ManifestClient;
 import com.example.testWeb.clients.RoverClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class restcontroller {
+    @Value("${api.key}")
+    String apiKey;
 
     @Autowired
     ManifestClient manifestClient;
@@ -22,18 +25,18 @@ public class restcontroller {
     RoverClient roverClient;
 
     @CrossOrigin
-    @GetMapping("/manifest")
-    public Manifest getManifest(){
-        Manifest manifest = manifestClient.getManifest();
+    @GetMapping("/manifest/{rover}")
+    public Manifest getManifest(@PathVariable("rover") String rover){
+        Manifest manifest = manifestClient.getManifest(rover, apiKey);
         return manifest;
     }
 
-    @CrossOrigin
-    @GetMapping("/manifest/lost")
-    public List<String>  getLostSols(){
-        Manifest manifest = manifestClient.getManifest();
-        return manifest.getLostSols();
-    }
+    // @CrossOrigin
+    // @GetMapping("/manifest/lost")
+    // public List<String>  getLostSols(){
+    //     Manifest manifest = manifestClient.getManifest();
+    //     return manifest.getLostSols();
+    // }
 
 //    @CrossOrigin
 //    @GetMapping("/manifest/sol")
@@ -45,10 +48,12 @@ public class restcontroller {
 
     @CrossOrigin
     @PostMapping(value = "/data")
-    public List<Image> getLostSols(@RequestParam("sol") int sol, @RequestParam("camera") String cam){
-        Photos photos = (Photos) roverClient.getPhotosByCamera(sol, cam, "N4nE7pvuZ2QfD0gsBQaOdm6SOIodp9KQaL0Rxclc");
+    public List<Image> getLostSols(@RequestParam("rover") String rover, @RequestParam("sol") int sol, @RequestParam("camera") String cam){
+        Photos photos = (Photos) roverClient.getPhotosByCamera(rover, sol, cam, apiKey);
         return photos.getImage(photos);
     }
+
+       
 
     @CacheEvict(allEntries = true, cacheNames = { "manifest"})
     @Scheduled(fixedRate = 9000000)
