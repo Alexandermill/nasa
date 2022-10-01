@@ -1,6 +1,6 @@
 package com.example.testWeb.controllers;
 
-import com.example.testWeb.Manifest;
+import com.example.testWeb.Entity.Manifest;
 import com.example.testWeb.clients.ManifestClient;
 import com.example.testWeb.clients.RoverClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +24,15 @@ public class control {
     }
 
     @GetMapping(value = "/curiosity")
-    public String getInde(Model model){
+    public String getRover(Model model){
         Manifest manifest = manifestClient.getManifest();
         model.addAttribute("manifest", manifest);
         return "curiosity_test";
+    }
+
+    @GetMapping(value = "/test")
+    public String getText(Model model){
+        return "test";
     }
 
 

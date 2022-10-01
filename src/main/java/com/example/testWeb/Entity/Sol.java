@@ -1,4 +1,4 @@
-package com.example.testWeb;
+package com.example.testWeb.Entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

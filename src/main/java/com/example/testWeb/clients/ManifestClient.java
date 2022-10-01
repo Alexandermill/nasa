@@ -1,6 +1,6 @@
 package com.example.testWeb.clients;
 
-import com.example.testWeb.Manifest;
+import com.example.testWeb.Entity.Manifest;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;

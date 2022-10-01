@@ -1,6 +1,6 @@
 package com.example.testWeb.clients;
 
-import com.example.testWeb.Photos;
+import com.example.testWeb.Entity.Photos;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;

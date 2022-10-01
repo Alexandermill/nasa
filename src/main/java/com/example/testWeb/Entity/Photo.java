@@ -1,4 +1,4 @@
-package com.example.testWeb;
+package com.example.testWeb.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

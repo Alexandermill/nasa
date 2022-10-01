@@ -1,17 +1,15 @@
 package com.example.testWeb.controllers;
 
-import com.example.testWeb.*;
+import com.example.testWeb.Entity.Image;
+import com.example.testWeb.Entity.Manifest;
+import com.example.testWeb.Entity.Photos;
 import com.example.testWeb.clients.ManifestClient;
 import com.example.testWeb.clients.RoverClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 
 @RestController

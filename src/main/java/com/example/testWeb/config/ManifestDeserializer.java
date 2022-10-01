@@ -1,7 +1,7 @@
 package com.example.testWeb.config;
 
-import com.example.testWeb.Manifest;
-import com.example.testWeb.Sol;
+import com.example.testWeb.Entity.Manifest;
+import com.example.testWeb.Entity.Sol;
 import com.fasterxml.jackson.core.JacksonException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

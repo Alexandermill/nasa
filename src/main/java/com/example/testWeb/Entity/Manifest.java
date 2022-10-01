@@ -1,4 +1,4 @@
-package com.example.testWeb;
+package com.example.testWeb.Entity;
 
 import com.example.testWeb.config.ManifestDeserializer;
 import com.fasterxml.jackson.annotation.*;
