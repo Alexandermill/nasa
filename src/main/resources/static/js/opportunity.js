@@ -1,5 +1,5 @@
     $(document).ready(function(){
-    var server = "http://192.168.0.105:8080";
+    var server = "https://avantesb.su/nasa";
     var rover = "opportunity";
     var json = null;
 
@@ -103,8 +103,6 @@ function galleriaLazyLoadConfig(start, next){
     Galleria.ready(function(){
           
         var arr = Array.from(Array(startLoadArray)).map((e,i)=>i+1)
-        console.log("start array");
-        console.log(arr);
         var datalength = this.getDataLength();
         var count = nextLoad;
           
@@ -115,8 +113,6 @@ function galleriaLazyLoadConfig(start, next){
             if ( e.index === count ) {
               
             arr = Array.from(Array(nextLoad)).map((e,i) => i+arr[arr.length-1]+1);
-            console.log("next array");
-            console.log(arr);
               
             this.lazyLoad( arr, function() {
                 count = count + nextLoad;
