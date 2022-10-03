@@ -35,7 +35,6 @@ build/
 ### tempalate ###
 resources/galleria/
 resources/css/
-resources/js/
 resources/static/
 resources/templates/galleria
 resources/templates/css/
