@@ -19,6 +19,7 @@ public class restcontroller {
     @Value("${api.key}")
     String apiKey;
 
+
     @Autowired
     ManifestClient manifestClient;
     @Autowired
@@ -56,7 +57,7 @@ public class restcontroller {
        
 
     @CacheEvict(allEntries = true, cacheNames = { "manifest"})
-    @Scheduled(fixedRate = 9000000)
+    @Scheduled(fixedRateString = "${cash-update.timeout}")
     public void cacheEvict() {
         System.out.println("Cache \"manifest\" evict");
     }
